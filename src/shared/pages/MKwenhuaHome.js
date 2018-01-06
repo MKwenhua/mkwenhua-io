@@ -9,7 +9,7 @@ class MKwenhuaHome extends React.PureComponent {
       <section className='container'>
         <TopNav />
         <h4 className='self-intro'>
-          How's it going?
+          Welcome and stuff
         </h4>
         <div className='row'>
           <div className='col-md-4'>

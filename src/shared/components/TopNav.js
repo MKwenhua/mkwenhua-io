@@ -1,7 +1,6 @@
 import React from 'react';
 import 'stylesheet/TopNav.css';
 
-
 class TopNav extends React.PureComponent {
   render() {
     return (
