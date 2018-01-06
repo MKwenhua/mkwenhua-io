@@ -1,7 +1,8 @@
 import express from 'express';
-const contentTypes = require('../../utils/content-types');
-const sysInfo      = require('../../utils/sys-info');
-const env = process.env;
+import {
+  ProccessInfo,
+  ProcessHealth
+} from './system_health'
 import {
   OrangutanPage
 } from './static'
@@ -22,22 +23,11 @@ app.get('/project/*', ProjectRoute);
 
 app.get('/yoyo', OrangutanPage);
 
-app.get('/health', (req, res) => {
-  res.writeHead(200);
-  res.end();
-});
+app.get('/health', ProcessHealth);
 
-app.get(/\/info\/(gen|poll)/, (req,res) => {
-    let url = req.url;
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Cache-Control', 'no-cache, no-store');
-    res.end(JSON.stringify(sysInfo[url.slice(6)]()));
-});
+app.get(/\/info\/(gen|poll)/, ProccessInfo);
 
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log(`Server is listening http://localhost:${process.env.PORT || 3000}`);
-// });
 
-let server = app.listen(env.NODE_PORT || 8443, env.NODE_IP || 'localhost', () => {
+app.listen(process.env.NODE_PORT || 8443, process.env.NODE_IP || 'localhost', () => {
   console.log(`Application worker ${process.pid} at  started...`);
 });

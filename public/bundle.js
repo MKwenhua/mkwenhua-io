@@ -3991,7 +3991,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_store__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_container_MainContainer__ = __webpack_require__(116);
-var _jsxFileName = '/Users/pete/mkwenhua-io/src/browser/index.js';
 
 
 
@@ -4008,28 +4007,11 @@ delete window.__PRELOADED_STATE__;
 var store = Object(__WEBPACK_IMPORTED_MODULE_4__shared_store__["a" /* buildClientStore */])(preloadedState);
 Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["hydrate"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_3_react_redux__["a" /* Provider */],
-  { store: store, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  },
+  { store: store },
   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
-    {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    },
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_container_MainContainer__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    })
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_container_MainContainer__["a" /* default */], null)
   )
 ), document.getElementById('root'));
 
@@ -25578,8 +25560,6 @@ var clientStoreBuilder = function clientStoreBuilder(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_page_MKwenhuaHome__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_router__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_router_dom__ = __webpack_require__(32);
-var _jsxFileName = '/Users/pete/mkwenhua-io/src/shared/containers/MainContainer.js';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25612,34 +25592,16 @@ var MainContainer = function (_React$PureComponent) {
   _createClass(MainContainer, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       var _props = this.props,
           main = _props.main,
           dispatch = _props.dispatch;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         __WEBPACK_IMPORTED_MODULE_6_react_router_dom__["c" /* Switch */],
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: this
-        },
+        null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_router_dom__["b" /* Route */], { exact: true, path: '/', component: function component(props) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_page_MKwenhuaHome__["a" /* default */], { main: main, dispatch: dispatch, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 26
-              },
-              __self: _this2
-            });
-          }, __source: {
-            fileName: _jsxFileName,
-            lineNumber: 25
-          },
-          __self: this
-        })
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_page_MKwenhuaHome__["a" /* default */], { main: main, dispatch: dispatch });
+          } })
       );
     }
   }]);
@@ -25671,8 +25633,6 @@ var MainContainer = function (_React$PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylesheet_Landing_css__ = __webpack_require__(120);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylesheet_Landing_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_stylesheet_Landing_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_component_TopNav__ = __webpack_require__(121);
-var _jsxFileName = '/Users/pete/mkwenhua-io/src/shared/pages/MKwenhuaHome.js';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25703,91 +25663,40 @@ var MKwenhuaHome = function (_React$PureComponent) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'section',
-        { className: 'container', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 9
-          },
-          __self: this
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_component_TopNav__["a" /* default */], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 10
-          },
-          __self: this
-        }),
+        { className: 'container' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_component_TopNav__["a" /* default */], null),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h4',
-          { className: 'self-intro', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 11
-            },
-            __self: this
-          },
+          { className: 'self-intro' },
           'How\'s it going?'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'row', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 14
-            },
-            __self: this
-          },
+          { className: 'row' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col-md-4', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 15
-              },
-              __self: this
-            },
+            { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'landing-direction-link', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 16
-                },
-                __self: this
-              },
+              { className: 'landing-direction-link' },
               'Projects'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col-md-4', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 20
-              },
-              __self: this
-            },
+            { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'landing-direction-link', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 21
-                },
-                __self: this
-              },
+              { className: 'landing-direction-link' },
               'GitHub'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'col-md-4', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 25
-              },
-              __self: this
-            },
+            { className: 'col-md-4' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'landing-direction-link', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 26
-                },
-                __self: this
-              },
+              { className: 'landing-direction-link' },
               'Technical Skills'
             )
           )
@@ -25816,8 +25725,6 @@ var MKwenhuaHome = function (_React$PureComponent) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylesheet_TopNav_css__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stylesheet_TopNav_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_stylesheet_TopNav_css__);
-var _jsxFileName = '/Users/pete/mkwenhua-io/src/shared/components/TopNav.js';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25843,29 +25750,14 @@ var TopNav = function (_React$PureComponent) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'nav',
-        { className: 'top-nav', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          },
-          __self: this
-        },
+        { className: 'top-nav' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'right-button', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 9
-            },
-            __self: this
-          },
+          { className: 'right-button' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', {
             className: 'button-face',
             height: '60',
-            src: 'https://res.cloudinary.com/dho6ptry6/image/upload/v1515200566/orangutan_face_afvtwf.png', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 10
-            },
-            __self: this
-          })
+            src: 'https://res.cloudinary.com/dho6ptry6/image/upload/v1515200566/orangutan_face_afvtwf.png' })
         )
       );
     }
