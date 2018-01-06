@@ -1,7 +1,8 @@
 import React from 'react';
-// import 'stylesheet/Main.css';
+import 'bootstrap-grid';
+import 'stylesheet/Main.css';
 import { connect } from 'react-redux';
-import MKwenhuaHome from 'page/MKwenhuaHome' 
+import MKwenhuaHome from 'page/MKwenhuaHome'
 import { withRouter } from 'react-router'
 import {
   Route,

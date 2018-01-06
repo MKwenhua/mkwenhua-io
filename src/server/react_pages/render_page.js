@@ -2,6 +2,7 @@ import { renderToString } from 'react-dom/server';
 
 const RenderPage = (content, preloadedState) => (`
     <!DOCTYPE html>
+    <html lang="en">
     <head>
       <title>MKwenhua</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">

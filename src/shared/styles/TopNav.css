@@ -1,0 +1,27 @@
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding: 5px;
+}
+
+.button-face {
+  border-radius: 10px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.button-face:hover {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .19);
+  transform: scale(0.9, 0.9);
+}
+
+.right-button {
+  float: right;
+}

@@ -1,14 +1,33 @@
 import React from 'react';
-
+import 'stylesheet/Landing.css';
+import TopNav from 'component/TopNav'
 
 class MKwenhuaHome extends React.PureComponent {
   render() {
     const {main, dispatch} = this.props;
     return (
-      <section>
-        <img
-          src='https://res.cloudinary.com/dho6ptry6/image/upload/v1515176267/hilarious_orangutan_i03xpn.jpg'
-        />
+      <section className='container'>
+        <TopNav />
+        <h4 className='self-intro'>
+          How's it going?
+        </h4>
+        <div className='row'>
+          <div className='col-md-4'>
+            <div className='landing-direction-link'>
+              Projects
+            </div>
+          </div>
+          <div className='col-md-4'>
+            <div className='landing-direction-link'>
+              GitHub
+            </div>
+          </div>
+          <div className='col-md-4'>
+            <div className='landing-direction-link'>
+              Technical Skills
+            </div>
+          </div>
+        </div>
       </section>
     )
   }
