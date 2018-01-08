@@ -18,19 +18,13 @@ const StyleLoader = {
     use: [
       {
         loader: "css-loader",
-        // fallback: 'style-loader',
-
         options: {
           sourceMap: true,
           importLoaders: 1,
           modules: true,
           minimize: process.env.NODE_ENV === 'production'
         }
-      },
-      // {
-      //   loader: "postcss-loader",
-      //   options: { plugins: [autoprefixer()] }
-      // }
+      }
     ]
   })
 }
@@ -41,19 +35,13 @@ const GlobalStyleLoader = {
     use: [
       {
         loader: "css-loader",
-        // fallback: 'style-loader',
-
         options: {
           sourceMap: true,
           importLoaders: 1,
           modules: false,
           minimize: process.env.NODE_ENV === 'production'
         }
-      },
-      // {
-      //   loader: "postcss-loader",
-      //   options: { plugins: [autoprefixer()] }
-      // }
+      }
     ]
   })
 }
@@ -84,8 +72,7 @@ const browserConfig = {
         }
       },
       StyleLoader,
-      GlobalStyleLoader,
-      {
+      GlobalStyleLoader, {
         test: [
           /\.js$/, /\.jsx$/
         ],
@@ -132,39 +119,8 @@ const serverConfig = {
           emit: false
         }
       },
-      //{
-      //   test: /\.css$/,
-      //   use: [
-      //     // {
-      //     //   loader: "css-loader/locals",
-      //     //
-      //     // },
-      //     {
-      //       loader: "css-loader",
-      //       // fallback: 'style-loader',
-      //
-      //       options: {
-      //         sourceMap: true,
-      //         importLoaders: 1,
-      //         modules: true,
-      //         minimize: process.env.NODE_ENV === 'production'
-      //       }
-      //     }
-      //     // {
-      //     // loader: 'postcss-loader',
-      //     //  options: {
-      //     //    ident: 'postcss',
-      //     //    plugins: (loader) => [
-      //     //      //require('postcss-import')({ root: loader.resourcePath }),
-      //     //      autoprefixer()
-      //     //    ]
-      //     //  }
-      //     //}
-      //   ]
-      // },
       StyleLoader,
-      GlobalStyleLoader,
-      {
+      GlobalStyleLoader, {
         test: [
           /\.js$/, /\.jsx$/
         ],
