@@ -1,15 +1,14 @@
 import React from 'react';
-import 'bootstrap-grid';
-import 'stylesheet/Main.css';
-import { connect } from 'react-redux';
+import 'stylesheet/Global.css';
+import {connect} from 'react-redux';
 import MKwenhuaHome from 'page/MKwenhuaHome'
-import { withRouter } from 'react-router'
-import {
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom'
+import BuzzwordPage from 'page/BuzzwordPage'
+import ProjectsPage from 'page/ProjectsPage'
+import GitPage from 'page/GitPage'
+import TopNav from 'component/TopNav'
+import {withRouter} from 'react-router'
+import {Route, Link, Switch, Redirect} from 'react-router-dom'
+
 
 
 const selectState = (state) => state;
@@ -19,13 +18,26 @@ class MainContainer extends React.PureComponent {
     super(props);
   }
   render() {
-    const { main, dispatch} = this.props;
+    const {main, dispatch} = this.props;
+    console.log('MainContainer', this.props)
     return (
-      <Switch>
-          <Route exact path='/' component={(props) => (
-            <MKwenhuaHome main={main} dispatch={dispatch}/>
-          )}/>
-      </Switch>
+      <section>
+        <TopNav/>
+        <Switch>
+          <Route exact path='/'>
+            <MKwenhuaHome location={this.props.location}/>
+          </Route>
+          <Route exact path='/buzzwords'>
+            <BuzzwordPage/>
+          </Route>
+          <Route exact path='/git'>
+            <GitPage/>
+          </Route>
+          <Route exact path='/projects'>
+            <ProjectsPage main={main} dispatch={dispatch}/>
+          </Route>
+        </Switch>
+      </section>
     )
   }
 }

@@ -1,31 +1,36 @@
 import React from 'react';
-import 'stylesheet/Landing.css';
-import TopNav from 'component/TopNav'
+import {
+  Link
+} from 'react-router-dom'
+import Landing from 'stylesheet/Landing.css';
 
 class MKwenhuaHome extends React.PureComponent {
   render() {
-    const {main, dispatch} = this.props;
+    console.log('Landing', Landing)
+    const {main, dispatch, location} = this.props;
     return (
-      <section className='container'>
-        <TopNav />
-        <h4 className='self-intro'>
+      <section className={location.pathname === '/' ? 'slide-page-main' :  'slide-page-main out'}>
+        <h4 className={Landing.selfIntro}>
           Welcome and stuff
         </h4>
         <div className='row'>
           <div className='col-md-4'>
-            <div className='landing-direction-link'>
+            <Link to='/projects' className={Landing.landingDirectionLink}>
+             <i className="fa fa-file-code-o" aria-hidden="true"></i>
               Projects
-            </div>
+            </Link>
           </div>
           <div className='col-md-4'>
-            <div className='landing-direction-link'>
+            <Link to='/git' className={Landing.landingDirectionLink}>
+             <i className="fa fa-github" aria-hidden="true"></i>
               GitHub
-            </div>
+            </Link>
           </div>
           <div className='col-md-4'>
-            <div className='landing-direction-link'>
+            <Link to='/buzzwords' className={Landing.landingDirectionLink}>
+              <i className="fa fa-indent" aria-hidden="true"></i>
               Technical Skills
-            </div>
+            </Link>
           </div>
         </div>
       </section>

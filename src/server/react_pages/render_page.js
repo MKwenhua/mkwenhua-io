@@ -6,6 +6,7 @@ const RenderPage = (content, preloadedState) => (`
     <head>
       <title>MKwenhua</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap-grid.min.css">
       <link rel="stylesheet" href="/css/main.css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,7 +14,6 @@ const RenderPage = (content, preloadedState) => (`
     </head>
     <body>
       <div id="root">${renderToString(content)}</div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.js"></script>
       <script>
           // WARNING: See the following for security issues around embedding JSON in HTML:
           // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations

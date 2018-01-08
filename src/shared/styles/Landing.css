@@ -1,4 +1,4 @@
-.landing-direction-link {
+.landingDirectionLink {
   color: #00d8ff;
   display: block;
   padding: 10px;
@@ -9,15 +9,31 @@
   -moz-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+  text-decoration: none;
 }
 
-.landing-direction-link:hover {
+.landingDirectionLink i {
+  display: block;
+  font-size: 45px;
+  margin:8px;
+  margin-bottom: 20px;
+}
+
+.landingDirectionLink:active {
+  color: #00d8ff;
+}
+
+.landingDirectionLink:visited {
+  color: #00d8ff;
+}
+
+.landingDirectionLink:hover {
   border-radius: 10px;
   background: #00d8ff;
   color: #fff;
   box-shadow:0 1px 1px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .19);
 }
 
-.self-intro {
+.selfIntro {
   color: #f70;
 }

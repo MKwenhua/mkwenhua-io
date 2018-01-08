@@ -1,0 +1,11 @@
+FROM node:8.9.4-alpine
+COPY package.json package.json
+COPY npm-shrinkwrap.json npm-shrinkwrap.json
+COPY server.js server.js
+COPY server.js.map server.js.map
+RUN npm install
+
+# Copy all local files into the image.
+COPY . .
+CMD npm run start
+EXPOSE 8443

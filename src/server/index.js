@@ -19,6 +19,12 @@ app.use(express.static('public'));
 
 app.get('/', IndexRoute);
 
+app.get('/projects', IndexRoute);
+
+app.get('/git', IndexRoute);
+
+app.get('/buzzwords', IndexRoute);
+
 app.get('/project/*', ProjectRoute);
 
 app.get('/yoyo', OrangutanPage);
