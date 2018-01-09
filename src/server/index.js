@@ -12,7 +12,7 @@ import {
   ProjectRoute
 } from './react_pages'
 
-const ProceessPort = process.env.NODE_PORT || 8443;
+const ProceessPort = process.env.NODE_PORT || 8080;
 const ProceessIP = process.env.NODE_IP || 'localhost';
 
 const app = express();
