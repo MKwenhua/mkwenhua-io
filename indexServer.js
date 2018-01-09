@@ -1,16 +1,16 @@
-import express from 'express';
-import {
+const express = require('express');
+const {
   ProccessInfo,
   ProcessHealth
-} from './system_health'
-import {
+} = require('./system_health')
+const {
   OrangutanPage
-} from './static'
+} = require('./static')
 
-import {
+const {
   IndexRoute,
   ProjectRoute
-} from './react_pages'
+} = require('./react_pages.js')
 
 const ProceessPort = process.env.NODE_PORT || 8080;
 const ProceessIP = process.env.NODE_IP || 'localhost';

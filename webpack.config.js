@@ -91,12 +91,12 @@ const browserConfig = {
 };
 
 const serverConfig = {
-  entry: "./src/server/index.js",
+  entry: "./src/server/react_pages/index.js",
   target: "node",
   externals: [nodeExternals()],
   output: {
     path: __dirname,
-    filename: "server.js",
+    filename: "react_pages.js",
     libraryTarget: "commonjs2"
   },
   resolve: {
