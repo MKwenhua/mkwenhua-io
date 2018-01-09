@@ -9,4 +9,4 @@ FROM mhart/alpine-node:base-8
 WORKDIR /app
 COPY . /app
 EXPOSE 8443
-CMD npm run start
+CMD npm run start-docker

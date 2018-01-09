@@ -1,8 +1,8 @@
-FROM node:8
-WORKDIR /app
-COPY package.json /app
-COPY webpack.config.js /app
+FROM mhart/alpine-node:8.9.4
+
+WORKDIR /srv
+ADD . .
 RUN npm install
-COPY . /app
-CMD npm run start
+
 EXPOSE 8443
+CMD ["node", "server.js"]
