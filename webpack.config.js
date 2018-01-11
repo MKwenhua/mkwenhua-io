@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-//const nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 const sourceAliases = {
@@ -136,14 +136,7 @@ const serverConfig = {
   entry: "./src/server/index.js",
   target: "node",
   bail: true,
-  externals: {
-    // 'react': 'React',
-    // 'react-dom': 'ReactDOM',
-    // //'react-redux': 'ReactRedux',
-    // 'react-router': 'ReactRouter',
-    // 'react-router-dom': 'ReactRouterDom',
-    // 'redux': 'Redux'
-  },
+  externals: [nodeExternals()],
   output: {
     path: __dirname,
     filename: "react_pages.js",

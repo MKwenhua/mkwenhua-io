@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 # Forces running containers to stop.
