@@ -3115,7 +3115,7 @@ MemoryRouter_MemoryRouter.propTypes = {
 
 
 /* harmony default export */ var react_router_dom_es_MemoryRouter = (es_MemoryRouter);
-// EXTERNAL MODULE: ./node_modules/react-router/node_modules/path-to-regexp/index.js
+// EXTERNAL MODULE: ./node_modules/path-to-regexp/index.js
 var path_to_regexp = __webpack_require__(53);
 var path_to_regexp_default = /*#__PURE__*/__webpack_require__.n(path_to_regexp);
 
@@ -25539,6 +25539,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+module.exports = {"hidden":"lED4UkljdNq0RoA7MWPFi","self-intro":"_1ilpAI13ttj-ukemqBkulT","switch-wrapper":"_2RjXqZwS3frjnsKEktpWZS","page":"_3Sca2aORjvczbi4uUf2ikz","pageSliderRight-enter":"H8VwEvusbXSpzay_nJ8ck","pageSliderRight-enter-active":"_1ZGO3MVPHK-e0XYywOozXV","pageSliderRight-exit":"kJl06mM92Lc6EnH9wPLvY","pageSliderRight-exit-active":"_2ZNPtNaMStf_YeY4NI4b0-","pageSliderLeft-enter":"_2mmcLvT-F5pbgefutBFLLC","pageSliderLeft-enter-active":"_3DWjLggSzMl9v6NDBKaEBk","pageSliderLeft-exit":"_1gEzmHbNaVaoCPn4I4srCY","pageSliderLeft-exit-active":"_1X0JhDI2kAHp6t7BjzpUsk","slide-page":"waBkn9osv3RtbvpBCN5kh","slide":"yMog7RhltoEOSA_8ATptb","slide-page-main":"ipPt49go-kaya3rNSyKV_","out":"_2R-1Ge204rUqjFnkJqFquw","slide-out":"w2lNqgkoIYHlnmCgHovZB"};
 
 /***/ }),
 /* 70 */

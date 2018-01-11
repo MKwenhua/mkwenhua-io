@@ -1,41 +1,48 @@
-import express from 'express';
-import {
-  ProccessInfo,
-  ProcessHealth
-} from './system_health'
-import {
-  OrangutanPage
-} from './static'
+import React from 'react';
+import MainContainer from 'container/MainContainer'
+import RenderPage from './render_page'
+import { StaticRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { buildServerStore } from '../shared/store'
+import defaultState from './defaultState'
+const context = { serverSide: true };
 
-import {
+
+const IndexRoute = (req, res) => {
+  const store = buildServerStore(defaultState)
+  console.log('store', store)
+  console.log('defaultState', defaultState)
+
+  res.send(RenderPage(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <MainContainer />
+      </StaticRouter>
+    </Provider>,
+    { ...store.getState(), container: 'dashboard'}
+  ));
+
+  res.end();
+};
+
+const ProjectRoute = (req, res) => {
+  const store = buildServerStore(defaultState)
+  console.log('store', store)
+  console.log('defaultState', defaultState)
+
+  res.send(RenderPage(
+    <Provider store={store}>
+      <StaticRouter location={req.url} context={context}>
+        <MainContainer />
+      </StaticRouter>
+    </Provider>,
+    { ...store.getState(), container: 'dashboard'}
+  ));
+  res.end();
+}
+
+
+export {
   IndexRoute,
   ProjectRoute
-} from './react_pages'
-
-const ProceessPort = process.env.NODE_PORT || 8080;
-const ProceessIP = process.env.NODE_IP || 'localhost';
-
-const app = express();
-
-app.use(express.static('public'));
-
-app.get('/', IndexRoute);
-
-app.get('/projects', IndexRoute);
-
-app.get('/git', IndexRoute);
-
-app.get('/buzzwords', IndexRoute);
-
-app.get('/project/*', ProjectRoute);
-
-app.get('/yoyo', OrangutanPage);
-
-app.get('/health', ProcessHealth);
-
-app.get(/\/info\/(gen|poll)/, ProccessInfo);
-
-
-app.listen(ProceessPort, ProceessIP, () => {
-  console.log(`Application worker ${process.pid} at IP: ${ProceessIP} Port: ${ProceessPort} has started`);
-});
+}

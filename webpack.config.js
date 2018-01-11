@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
-const nodeExternals = require('webpack-node-externals');
+//const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 const sourceAliases = {
@@ -10,6 +10,46 @@ const sourceAliases = {
   component: path.resolve(__dirname, 'src/shared/components'),
   page: path.resolve(__dirname, 'src/shared/pages')
 }
+
+const CssLoad = {
+  test: /\.css$/,
+  loader: ExtractTextPlugin.extract(Object.assign({
+    fallback: {
+      loader: require.resolve('style-loader'),
+      options: {
+        hmr: false
+      }
+    },
+    use: [
+      {
+        loader: require.resolve('css-loader'),
+        options: {
+          importLoaders: 1,
+          minimize: true,
+          modules: true,
+          sourceMap: process.env.NODE_ENV === 'development'
+        }
+      }, {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          // Necessary for external CSS imports to work
+          // https://github.com/facebookincubator/create-react-app/issues/2677
+          ident: 'postcss',
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+              browsers: [
+                '>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9', // React doesn't support IE8 anyway
+              ],
+              flexbox: 'no-2009'
+            })
+          ]
+        }
+      }
+    ]
+  }, {}))
+  // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+};
 
 const StyleLoader = {
   test: /\.css$/,
@@ -58,7 +98,7 @@ const browserConfig = {
     ],
     alias: sourceAliases
   },
-  devtool: "cheap-module-source-map",
+  devtool: "cheap-source-map",
   module: {
     rules: [
       {
@@ -71,8 +111,10 @@ const browserConfig = {
           publicPath: url => url.replace(/public/, "")
         }
       },
-      StyleLoader,
-      GlobalStyleLoader, {
+      // StyleLoader,
+      // GlobalStyleLoader,
+      CssLoad,
+      {
         test: [
           /\.js$/, /\.jsx$/
         ],
@@ -91,9 +133,17 @@ const browserConfig = {
 };
 
 const serverConfig = {
-  entry: "./src/server/react_pages/index.js",
+  entry: "./src/server/index.js",
   target: "node",
-  externals: [nodeExternals()],
+  bail: true,
+  externals: {
+    // 'react': 'React',
+    // 'react-dom': 'ReactDOM',
+    // //'react-redux': 'ReactRedux',
+    // 'react-router': 'ReactRouter',
+    // 'react-router-dom': 'ReactRouterDom',
+    // 'redux': 'Redux'
+  },
   output: {
     path: __dirname,
     filename: "react_pages.js",
@@ -105,7 +155,7 @@ const serverConfig = {
     ],
     alias: sourceAliases
   },
-  devtool: "cheap-module-source-map",
+  devtool: "cheap-source-map",
   module: {
     rules: [
       {
@@ -119,8 +169,10 @@ const serverConfig = {
           emit: false
         }
       },
-      StyleLoader,
-      GlobalStyleLoader, {
+      // StyleLoader,
+      // GlobalStyleLoader,
+      CssLoad,
+      {
         test: [
           /\.js$/, /\.jsx$/
         ],
@@ -135,7 +187,14 @@ const serverConfig = {
   plugins: [
     new ExtractTextPlugin({filename: "public/css/[name].css"}),
     new webpack.optimize.ModuleConcatenationPlugin()
-  ]
+  ],
+  node: {
+    dgram: 'empty',
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+    child_process: 'empty',
+  },
 };
 
 module.exports = [browserConfig, serverConfig];
