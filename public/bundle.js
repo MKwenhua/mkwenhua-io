@@ -3115,7 +3115,7 @@ MemoryRouter_MemoryRouter.propTypes = {
 
 
 /* harmony default export */ var react_router_dom_es_MemoryRouter = (es_MemoryRouter);
-// EXTERNAL MODULE: ./node_modules/react-router/node_modules/path-to-regexp/index.js
+// EXTERNAL MODULE: ./node_modules/path-to-regexp/index.js
 var path_to_regexp = __webpack_require__(53);
 var path_to_regexp_default = /*#__PURE__*/__webpack_require__.n(path_to_regexp);
 
