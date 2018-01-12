@@ -2,6 +2,9 @@
   "name": "mkwenhua-io",
   "description": "My Personal Site",
   "version": "1.0.0",
+  "engines": {
+    "node": "9.3.0"
+  },
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node ./server.js",
