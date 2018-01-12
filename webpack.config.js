@@ -111,9 +111,9 @@ const browserConfig = {
           publicPath: url => url.replace(/public/, "")
         }
       },
-      // StyleLoader,
-      // GlobalStyleLoader,
-      CssLoad,
+       StyleLoader,
+       GlobalStyleLoader,
+      //CssLoad,
       {
         test: [
           /\.js$/, /\.jsx$/
@@ -162,9 +162,9 @@ const serverConfig = {
           emit: false
         }
       },
-      // StyleLoader,
-      // GlobalStyleLoader,
-      CssLoad,
+       StyleLoader,
+       GlobalStyleLoader,
+    //  CssLoad,
       {
         test: [
           /\.js$/, /\.jsx$/
