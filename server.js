@@ -661,7 +661,7 @@ var react_pages_ProjectRoute = function ProjectRoute(req, res) {
 
 
 
-var ProceessPort = process.env.NODE_PORT || 8080;
+var ProceessPort = process.env.PORT || 5000;
 var ProceessIP = process.env.NODE_IP || 'localhost';
 
 var app = external__express__default()();
@@ -684,7 +684,7 @@ app.get('/health', ProcessHealth);
 
 app.get(/\/info\/(gen|poll)/, ProccessInfo);
 
-app.listen(ProceessPort, ProceessIP, function () {
+app.listen(ProceessPort, function () {
   console.log('Application worker ' + process.pid + ' at IP: ' + ProceessIP + ' Port: ' + ProceessPort + ' has started');
 });
 

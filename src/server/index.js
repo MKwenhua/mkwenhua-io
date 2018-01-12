@@ -12,7 +12,7 @@ import {
   ProjectRoute
 } from './react_pages'
 
-const ProceessPort = process.env.NODE_PORT || 8080;
+const ProceessPort = process.env.PORT || 5000;
 const ProceessIP = process.env.NODE_IP || 'localhost';
 
 const app = express();
@@ -36,6 +36,6 @@ app.get('/health', ProcessHealth);
 app.get(/\/info\/(gen|poll)/, ProccessInfo);
 
 
-app.listen(ProceessPort, ProceessIP, () => {
+app.listen(ProceessPort, () => {
   console.log(`Application worker ${process.pid} at IP: ${ProceessIP} Port: ${ProceessPort} has started`);
 });
