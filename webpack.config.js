@@ -32,8 +32,6 @@ const CssLoad = {
       }, {
         loader: require.resolve('postcss-loader'),
         options: {
-          // Necessary for external CSS imports to work
-          // https://github.com/facebookincubator/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
             require('postcss-flexbugs-fixes'),
@@ -113,7 +111,6 @@ const browserConfig = {
       },
        StyleLoader,
        GlobalStyleLoader,
-      //CssLoad,
       {
         test: [
           /\.js$/, /\.jsx$/
@@ -164,7 +161,6 @@ const serverConfig = {
       },
        StyleLoader,
        GlobalStyleLoader,
-    //  CssLoad,
       {
         test: [
           /\.js$/, /\.jsx$/

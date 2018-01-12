@@ -1,4 +1,4 @@
-FROM node:9
+FROM node:9.3.0
 
 WORKDIR /opt/app/
 
@@ -8,6 +8,6 @@ RUN yarn install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 5000
 
 CMD yarn start

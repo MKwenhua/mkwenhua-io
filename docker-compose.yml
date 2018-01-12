@@ -8,6 +8,6 @@ services:
       - NODE_ENV=development
       - ENV_NAME=local
     ports:
-      - "8080:8080"
+      - "5000:5000"
     volumes:
     - ./src:/opt/app/src
