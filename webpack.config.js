@@ -4,6 +4,51 @@ const autoprefixer = require("autoprefixer");
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
+const BundleEnvPlugins = (isDevelopment) => {
+  if (isDevelopment === true) {
+    return {serverPlugins: [], clientPlugins: []}
+  }
+
+  const BundleEnv = new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify('production')});
+  const ClientOptimize = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false,
+      dead_code: true,
+      comparisons: false
+    },
+    mangle: {
+      safari10: true
+    },
+    output: {
+      comments: false,
+      ascii_only: true
+    },
+    sourceMap: true
+  })
+  const ServerOptimize = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false,
+      dead_code: true,
+      comparisons: false
+    },
+    output: {
+      comments: false,
+      ascii_only: true
+    },
+    sourceMap: true,
+    mangle: false
+  })
+
+  return {
+    serverPlugins: [
+      BundleEnv, ServerOptimize
+    ],
+    clientPlugins: [BundleEnv, ClientOptimize]
+  }
+}
+
+const {serverPlugins, clientPlugins} = BundleEnvPlugins(process.env.NODE_ENV !== 'production');
+
 const sourceAliases = {
   stylesheet: path.resolve(__dirname, 'src/shared/styles'),
   container: path.resolve(__dirname, 'src/shared/containers'),
@@ -109,9 +154,8 @@ const browserConfig = {
           publicPath: url => url.replace(/public/, "")
         }
       },
-       StyleLoader,
-       GlobalStyleLoader,
-      {
+      StyleLoader,
+      GlobalStyleLoader, {
         test: [
           /\.js$/, /\.jsx$/
         ],
@@ -126,7 +170,7 @@ const browserConfig = {
   plugins: [
     new ExtractTextPlugin({filename: "public/css/[name].css"}),
     new webpack.optimize.ModuleConcatenationPlugin()
-  ]
+  ].concat(clientPlugins)
 };
 
 const serverConfig = {
@@ -159,9 +203,8 @@ const serverConfig = {
           emit: false
         }
       },
-       StyleLoader,
-       GlobalStyleLoader,
-      {
+      StyleLoader,
+      GlobalStyleLoader, {
         test: [
           /\.js$/, /\.jsx$/
         ],
@@ -176,14 +219,14 @@ const serverConfig = {
   plugins: [
     new ExtractTextPlugin({filename: "public/css/[name].css"}),
     new webpack.optimize.ModuleConcatenationPlugin()
-  ],
+  ].concat(serverPlugins),
   node: {
     dgram: 'empty',
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-    child_process: 'empty',
-  },
+    child_process: 'empty'
+  }
 };
 
 module.exports = [browserConfig, serverConfig];
