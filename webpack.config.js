@@ -1,51 +1,11 @@
+require('dotenv').config()
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
 const nodeExternals = require('webpack-node-externals');
 const path = require('path');
-
-const BundleEnvPlugins = (isDevelopment) => {
-  if (isDevelopment === true) {
-    return { serverPlugins: [], clientPlugins: [] }
-  }
-
-  const BundleEnv = new webpack.DefinePlugin({'process.env.NODE_ENV': JSON.stringify('production')});
-  const ClientOptimize = new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        dead_code: true,
-        comparisons: false
-      },
-      mangle: {
-        safari10: true
-      },
-      output: {
-        comments: false,
-        ascii_only: true
-      },
-      sourceMap: true
-    })
-    const ServerOptimize = new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-          dead_code: true,
-          comparisons: false
-        },
-        output: {
-          comments: false,
-          ascii_only: true
-        },
-        sourceMap: true,
-        mangle: false
-      })
-
-    return {
-     serverPlugins: [BundleEnv, ServerOptimize],
-     clientPlugins: [BundleEnv, ClientOptimize]
-    }
-}
-
-const { serverPlugins, clientPlugins } = BundleEnvPlugins(process.env.NODE_ENV !== 'production');
+const { serverPlugins, clientPlugins } = require('./webpack_plugins/optimize_plugins.js')(webpack);
+const ClientS3Plugins = require('./webpack_plugins/s3_plugin.js');
 
 const sourceAliases = {
   stylesheet: path.resolve(__dirname, 'src/shared/styles'),
@@ -93,7 +53,7 @@ const browserConfig = {
   entry: "./src/browser/index.js",
   output: {
     path: __dirname,
-    filename: "./public/bundle.js"
+    filename: "public/bundle.js"
   },
   resolve: {
     extensions: [
@@ -130,7 +90,7 @@ const browserConfig = {
   plugins: [
     new ExtractTextPlugin({filename: "public/css/[name].css"}),
     new webpack.optimize.ModuleConcatenationPlugin()
-  ].concat(clientPlugins)
+  ].concat(clientPlugins, ClientS3Plugins)
 };
 
 const serverConfig = {

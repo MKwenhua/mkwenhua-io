@@ -9,7 +9,7 @@ class TopNav extends React.PureComponent {
           <img
             className={styles.buttonFace}
             height="60"
-            src='https://res.cloudinary.com/dho6ptry6/image/upload/v1515200566/orangutan_face_afvtwf.png'/>
+            src='https://dq8llwxgkllay.cloudfront.net/site_icon_cube.png'/>
         </div>
       </nav>
     )

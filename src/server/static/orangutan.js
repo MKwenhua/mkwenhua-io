@@ -8,7 +8,7 @@ const OrangutanPageContent = `
     </head>
     <body>
       <h1>Static Page!</h1>
-      <img src="https://res.cloudinary.com/dho6ptry6/image/upload/v1515176267/hilarious_orangutan_i03xpn.jpg">
+      <img src="https://dq8llwxgkllay.cloudfront.net/hilarious_orangutan_i03xpn.jpg">
     </body>
   </html>
 `

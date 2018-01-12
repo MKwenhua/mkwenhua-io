@@ -6,12 +6,12 @@ const RenderPage = (content, preloadedState) => (`
     <head>
       <title>MKwenhua - Welcome!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-      <link type="image/png" rel="shortcut icon" href="https://s3.amazonaws.com/canvasmp3/site_icon_cube.png">
+      <link type="image/png" rel="shortcut icon" href="https://dq8llwxgkllay.cloudfront.net/site_icon_cube.png">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap-grid.min.css">
-      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://dq8llwxgkllay.cloudfront.net/public/css/main.css">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <script src="/bundle.js" defer></script>
+      <script src="https://dq8llwxgkllay.cloudfront.net/public/bundle.js" defer></script>
     </head>
     <body>
       <div id="root">${renderToString(content)}</div>
