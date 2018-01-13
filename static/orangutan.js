@@ -13,4 +13,4 @@ const OrangutanPageContent = `
   </html>
 `
 
-export default OrangutanPageContent;
+module.exports = OrangutanPageContent;

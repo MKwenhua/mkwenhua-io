@@ -1,4 +1,3 @@
-require('dotenv').config()
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoprefixer = require("autoprefixer");
@@ -99,7 +98,7 @@ const serverConfig = {
   externals: [nodeExternals()],
   output: {
     path: __dirname,
-    filename: "server.js",
+    filename: "react_pages.js",
     libraryTarget: "commonjs2"
   },
   resolve: {

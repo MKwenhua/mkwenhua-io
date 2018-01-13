@@ -1,11 +1,10 @@
-import OrangutanPageContent from './orangutan'
-
+const OrangutanPageContent = require('./orangutan')
 
 const OrangutanPage = (req, res) => {
   res.send(OrangutanPageContent);
   res.end();
 }
 
-export {
+module.exports = {
   OrangutanPage
 }
