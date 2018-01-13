@@ -8,7 +8,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node --use_strict start.js",
-    "postinstall": "NODE_ENV=production webpack",
+    "x-postinstall": "NODE_ENV=production webpack",
     "local-build": "node set_up_env.js && NODE_ENV=production webpack",
     "start-server": "NODE_ENV=production webpack && NODE_ENV=production node --use_strict server.js",
     "start-build": "NODE_ENV=production webpack && NODE_ENV=production node --use_strict start.js",
